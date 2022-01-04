@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Author: Vladyslav Hrynchuk
+# Date created: 4/1/22
+# Last modified: 4/1/22
+
+# Description:
+# This is a script for backing up your home folder data to ~/bash_course
+
+# Usage: ./backup_script
+
+tar -cvf ~/bash_course/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar ~/* 2>/dev/null
+exit 0
