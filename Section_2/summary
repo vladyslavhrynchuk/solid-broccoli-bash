@@ -1,0 +1,27 @@
+Parameter is any entity that stores values
+Types of parameters: Variables, Positional parameter, Special parameters
+
+Variables:
+We can make Variable uppercase or lowercase.
+Uppercase ${variable^} or ${variable^^}
+Lowercase ${variable,} or ${variable,,}
+We can get a length of a variable: ${#variable}
+We can get a slice of parameter: ${variable:start:length}
+	we cant start backwards ${variable: -start:length}
+
+Command substitution:
+We use Command substitution assing a variable result of a command
+time=$(date)
+
+Arithmetic expansion:
+Arithmetic expansion allows us to perform arithmetic calculation:
+$(( x+y ))
+The result will be always given in int, to use fractions, we should use bc command
+
+Tilda expansion:
+Tilda(~)  expands for user`s home directory
+~+ expands for user`s current working directiry
+~- expands for user`s last seen directory
+~NameOfTheUser expands for home directory of specific user
+ 
+
