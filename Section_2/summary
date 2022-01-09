@@ -23,5 +23,17 @@ Tilda(~)  expands for user`s home directory
 ~+ expands for user`s current working directiry
 ~- expands for user`s last seen directory
 ~NameOfTheUser expands for home directory of specific user
- 
+
+Brace expansion:
+There are two types of brace expansion - String list and Range list.
+String list:
+echo {a,19,z,Name,43} - no spaces between arguments
+Range list:
+echo {1..10} - will print from 1 to 10
+echo {10..1} - will print from 10 to 1
+echo {a..z} - will print from a to z
+echo {1..1000..3} - will print with step of 3
+echo month{1..12} - will print from month1 to month12
+echo month{01..12}/day{01..31}
+
 
