@@ -1,0 +1,43 @@
+Bash goes throught 5 steps while processing user`s input:
+1 - Tokenization
+2 - Command indentification
+3 - Shell expansions
+4 - Quote removal
+5 - Redirections
+
+Tokenization:
+Bash scans line for unquoted metacharacters and divides characters into tokens
+Metacharacters are ; & () <> space tab newline
+Then, tokens are splitted into words and operators
+	Words do not contain unquoted metacharacters
+	Operators contain at least 1 unquoted metacharacter
+		Operators divided into Control operators and Redirection operators
+
+Command identification:
+Upon words Bash identifies commands. There are 2 types of commands: Simple and Compound
+	Simple commands made up of 1 word and end wit control operators
+	Compound commands are used for logic in bash and have special word at the end of command
+
+Shell expansion:
+It performs different shell expansion (see Section_1 summary)  with a strict order.
+	1 - Brace {} expansion
+	2 - a) Parameter expansion $
+	    b) Arithmetic expansion $(( x+y ))
+	    c) Command substitution $(command)
+	    d) Tilda expansion ~, ~-, ~+, ~user
+	3 - Word splitting
+		Splits result of a), b), c) into words.
+		To omit splitting we can double quote them, like "$(command)" or "$value"
+		Word splitting defined by IFS (internal field separator), which is space, tab and new line by default
+		IFS is a simple variable and can be reassigned
+	4 - Globbing
+		It expands wildcards *, ? and []
+
+Quote removal:
+On this stage bash removes unquoted "", '' and \.
+Bash do not remove such characters if they appeared after shell expansion.
+
+Redirections:
+Redirects STDIN (0), STDOUT (1) and STDERR (2)
+We can use <, >, &>, >>, <<, &>>
+
