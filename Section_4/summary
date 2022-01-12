@@ -1,0 +1,31 @@
+Positional parameters
+Positional parameters have strict position when typing variables.
+Typical script form looks like this: ./script pos_parameter_1 pos_parameter_2 pos_parameter_N
+Inside the script they are represented with numbers: echo "$1, $2, $N"
+Important note that if we are using positional parameters greater then 10, we should use square brackets like ${11}
+In other case, bash with interpret it as a $1 and 1 separately
+
+Special parameters
+Special parameters are parameters that bash give a secial meaning
+They are: $@, "$@", $*, "$*", $0, $#
+These characters are names with $, which has the same meaning as for regular parameters
+	$# equals to number of arguments provided to a script
+	$0 in command line will return name of the shell. in script it will return name of the script
+	$@ allow to acces all positional parameters of the script, separates them with spaces, so it means $1, $2, $3...$N
+	"$@" omits word splitting for each parameter, so it will be "$1", "$2", "$3"..."$N"
+	$* if unquoted works exactly same as $@
+	"$*" thread all positiona parameters as a single word, but separates them with IFS variable
+
+Read command
+Read is a bash command which with no name provided saves input into $REPLY variable
+With custom name provided to command, it saves input into variable with that name: read parameter_1 parameter_2
+read has a number of options:-t, -p, -s, -N etc
+
+Select command
+Select command give user a number of options to choose from.
+select var in var1 var2 var3 var4; do
+	echo $var
+	done
+The construction will ask user constantly, to ask once need to add break before done
+To make the command more user-friendly, we can use PS3 variable. this is variable, shown instead of prompt when user is choosing the value
+
