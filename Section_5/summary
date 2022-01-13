@@ -1,0 +1,55 @@
+List
+List is when you put a number of commands into one line.
+List can be created using List operators.
+List operators are & ; && ||
+
+Test command
+Test command is used to compare different informtion
+Test returns as a result of True value 0 and False value 1
+[ 2 -eq 2 ]; echo $? will give output of 0
+Test operator can be use to compare numbers, strings and files
+Test operators for comparing numbers are:
+	-eq to check if values are equal
+	-ne to check if values are not equal
+	-gt to check if first value greater than the secon value
+	-lt to check if first value less then second value
+	-geq to check if first value greater than or equal second value
+	-leq to check if forst value less than or equal second value
+Test operators fo comparing strings are: =, !=
+	-z to check if the given string is empty
+	-n to check of the given string is not empty
+	[ -z $a ]; echo $?
+	Example: a=hello; b-world; [ &a = $b ] ; echo $?
+Test operators for files are:
+	-e to check if file exists
+	-f to check if file exists and it is a regular file
+	-d to check if file exists and it is a directory
+	-x to check if file exists and have executable permisions
+	-r to check if file have read permisions
+	-w to check if file have write permisions
+	-nt to check if file is newer than another file
+	Example [ -e file.txt ]; echo $?
+
+if statement
+if is a compound command. It starts with reserved word if and ends with reserved word fi.
+syntax is:
+if [ 2 -gt 1 ]; then
+	echo "2 greater than 1"
+elif [ 3 -gt 1 ]; then 
+	echo "3 greater than 1"
+else
+	echo "else part"
+fi
+
+if statement conditions can be combined int more complex like [ $a=$b ] && [ $b=$c ];
+
+case statement
+case statement is useful whem performing operations based on value of one variable
+it is also compound command and starts with reserved word case, ends with esac
+syntax is:
+case $number in
+	23) echo "is 23";;
+	[0-9][0-9][0-9] echo) "is 3 digit number";;
+	*) echo "default output for case statement";;
+esac
+
