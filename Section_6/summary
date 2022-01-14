@@ -1,0 +1,37 @@
+While loops
+While loops are used to perform command while certain condition is true
+Condition can be test ([) command or any outher command.
+Syntax:
+	while [ $x -lt 10 ]; do
+		echo "hello"
+		x=$(( $x-1 ))
+	done
+
+getopts
+getopst command is used to read options from a script and perform certain actions.
+Syntax: 
+	getopts "ab" opt - here users can enter 2 valid options. Option will be stored on opt variable.
+	getopts "a:b:" opt - here user can enter 2 valid options and provide some parameters to one of them. 
+		options will be stored in opt variable. parameters of the option wil be stored in $OPTVAR variable.
+If getopts receives unknow option, it will write ? to getopts variable (opt in the preceeding example)
+
+Read-while loops
+Read-while loops is construction which allows to read files line by line
+Syntax:
+	while read line; do
+		echo "$line"
+	done < file.txt
+Preceeding script will read file.txt line by line
+We also can make script to read a custom file.
+Syntax:
+	while read line; do
+		echo "$line"
+	done < "$1"
+The script will take file as positional parameter and read it line by line
+We also can push to read-while loop a result of command by using process substitution
+Syntax:
+	while read line; do
+		echo "$line"
+	done < <(ls $HOME)
+
+ 
