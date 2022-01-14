@@ -4,7 +4,7 @@ Condition can be test ([) command or any outher command.
 Syntax:
 	while [ $x -lt 10 ]; do
 		echo "hello"
-		x=$(( $x-1 ))
+		x=$(( $x+1 ))
 	done
 
 getopts
@@ -12,7 +12,7 @@ getopst command is used to read options from a script and perform certain action
 Syntax: 
 	getopts "ab" opt - here users can enter 2 valid options. Option will be stored on opt variable.
 	getopts "a:b:" opt - here user can enter 2 valid options and provide some parameters to one of them. 
-		options will be stored in opt variable. parameters of the option wil be stored in $OPTVAR variable.
+		options will be stored in opt variable. parameters of the option wil be stored in $OPTARG variable.
 If getopts receives unknow option, it will write ? to getopts variable (opt in the preceeding example)
 
 Read-while loops
