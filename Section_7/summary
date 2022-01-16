@@ -1,0 +1,32 @@
+Array
+Using arrays we can assing multiple values for a single variable.
+Syntas for creating an array: array=(1 2 3 4 5)
+To access a specific index of an array we need to enter ${array[index]}
+To print all the array: ${array[@]}
+To get a specific part of array: ${array[@]:start:length}
+To add a value to array: array+=(value)
+To remove a value from an array: unset array[index]
+	AFTER REMOVING INDEXES WILL NOT BE RECALCULATED
+To get a list on indexes of an array: ${!array[@]}
+To assing a new value to an index: array[index]=value
+
+Readarray
+readarray command allows to read file and conver it's strings to elements of an array
+Syntax: readarray array_name < file.txt
+readarray command stores array values together with newline '\n' characters
+To omit storing newline characters we can use -t option of the command
+To create array from the output of a command. we can use process substitution
+
+For loops
+For loop is an compound command which  allow to iterate over sertain options
+Syntax:
+	for element in first second third; do
+		echo "this is $element"
+	done
+We can combine for loops with an array and readarray command to perform operations on every line of a file
+Syntax:
+	readarray array_name <file.txt
+	for element in "${array_name[@]}; do
+		echo "$element"
+	done
+
