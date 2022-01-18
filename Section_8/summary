@@ -1,0 +1,20 @@
+Shellcheck
+Shellcheck is a program to debug bash scripts.
+It is availible online, can also being installed.
+
+Errors messages
+Bash error masseges are broken into parts separated by colons.
+First prt is a program name, remaining parts help to narrow dowm the issue
+Common bash errors:
+	- No such file or directiry
+	- File exists
+	- Permission denied
+	- Operation not permitted
+
+Finding help
+There are 3 commands available for help.
+	help - used nmostly for bash build-in commands
+	gives short explanation what command does
+	to check if command is build-in: type -a command
+	man - manual page for external commands
+	info - the biggest one. gives detailed explanation what command does
