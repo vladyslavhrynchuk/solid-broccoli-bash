@@ -1,0 +1,37 @@
+at command
+at command allows to run a job once at specific time.
+It is performed by atd deamon.
+at jobs will be running in /bin/sh.
+Syntax: at 9:30am (then you will be prompted to enter a command.
+	at 10:05am -f script.sh will run file script.sh at given time
+	at -l will list all available jobs
+	at -r [job_number] will remove given job from queue
+Date formats are quite broad for the command. Examples
+	- at 9am monday
+	- at 9am 12/23/2022
+	- at 9am 23.12.2022
+	- at 9am tomorrow
+	- at 9am next week
+	- at now + 5 minutes
+	- at now + 3 days
+
+cron command
+cron command allow to run a job repeatedly at given time.
+It is performed by cron deamon.
+cron jobs will be running in /bin/sh.
+Jobs can be scheduling using crontab -e command.
+cron jobs will be running from user, who created the job.
+To test cron schedule it is useful to use crontab.guru website
+
+cron have directories, where we can put a script and it will be runnind based on direcory name (hourly, daily, weekly, monthly)
+Jobs in these directories must not contain '.' symbol in its name. The will be running from root user.
+Properties for cron directories can be modified in crontab file.
+To perform scripts in cron folders, cron executes run-parts command, which executes all the scripts in given folder.
+
+anacron command
+anacron allows to run a job and recover it if the system was turned off.
+anacron jobs will be running on /bin/sh
+jobs are placed in /etc/anacron tab and will be running as a root
+if anacron is installed in system, all scripts in cron.[daily,weekly,monthly] will be running by anacron
+
+
